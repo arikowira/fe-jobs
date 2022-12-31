@@ -27,12 +27,8 @@ function Tbody({ data, display, status, editUrl }) {
                 {editUrl && (
                   <SButton
                     variant='warning'
-                    size='lg'
-                    action={() =>
-                      navigate(
-                        `detail/${data.id}`
-                      )
-                    }
+                    size='s'
+                    action={() => navigate(`detail/${data.id}`)}
                   >
                     Detail
                   </SButton>

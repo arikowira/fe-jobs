@@ -7,17 +7,11 @@ const Pagination = (props) => {
     <ReactPaginate
       previousLabel={'previous'}
       nextLabel={'next'}
-      breakLabel={
-        <span role='button' className='page-link'>
-          ...
-        </span>
-      }
+      breakLabel='...'
       breakClassName={'page-item'}
       pageCount={pages}
-      marginPagesDisplayed={1}
-      pageRangeDisplayed={5}
       onPageChange={handlePageClick}
-      containerClassName={'pagination'}
+      containerClassName={'pagination justify-content-center'}
       pageClassName={'page-item'}
       pageLinkClassName={'page-link'}
       nextClassName={'page-item'}

@@ -2,7 +2,9 @@ import {
   START_FETCHING_JOBS,
   SUCCESS_FETCHING_JOBS,
   ERROR_FETCHING_JOBS,
-  SET_SEARCH,
+  SET_DESCRIPTION,
+  SET_LOCATION,
+  SET_FULL_TIME,
   SET_PAGE,
 } from './constants';
 
@@ -16,8 +18,9 @@ const statuslist = {
 const initialState = {
   data: [],
   page: 1,
-  pages: 2,
+  location: '',
   description: '',
+  full_time: false,
   status: statuslist.idle,
 };
 
@@ -34,15 +37,24 @@ export default function reducer(state = initialState, action) {
         ...state,
         status: statuslist.success,
         data: action.jobs,
-        pages: action.pages,
       };
 
-    case SET_SEARCH:
+    case SET_DESCRIPTION:
       return {
         ...state,
         description: action.description,
       };
 
+    case SET_LOCATION:
+      return {
+        ...state,
+        location: action.location,
+      };
+    case SET_FULL_TIME:
+      return {
+        ...state,
+        full_time: action.full_time,
+      };
     case SET_PAGE:
       return {
         ...state,

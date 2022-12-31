@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 
-function SearchInput({ handleChange, query, disabled, label }) {
+function SearchInput({ handleChange, value, disabled, label, placeholder }) {
   return (
     <Row className='mb-3'>
       <Form.Group as={Col}>
@@ -9,8 +9,8 @@ function SearchInput({ handleChange, query, disabled, label }) {
         <Form.Control
           disabled={disabled}
           type='text'
-          placeholder='Masukan pencarian disini'
-          value={query}
+          placeholder={placeholder}
+          value={value}
           name='query'
           onChange={handleChange}
         />
